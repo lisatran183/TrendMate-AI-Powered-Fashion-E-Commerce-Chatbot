@@ -1,4 +1,4 @@
-# TrendMate-AI-Powered-Fashion-E-Commerce-Chatbot
+# TrendMate — AI-Powered Fashion E-Commerce Chatbot
 
 > Northeastern University · MPS Analytics Capstone · Spring 2026  
 > Team: Divya Chenthamarakshan, Lisa Tran, Laura, Lexin Li, Monika Roy
@@ -11,9 +11,11 @@ I designed and built the intent classification system, prompt engineering layer,
 
 **What I built:**
 - `intent_classifier.py` — Weighted keyword classifier covering 12 intent categories (no ML model; rule-based for transparency and speed)
-- `prompt_templates.py` — 12 intent-specific prompt templates grounded in the Bitext 26K customer support dataset
-- `response_generator.py` — Gemini 2.5 Flash integration with 3-retry backoff, adaptive tone per intent, and out-of-scope query handling
-- `escalation_handler.py` — Priority-4 escalation override that bypasses the LLM entirely for frustrated or high-urgency queries
+- `prompt_templates.py` — 8 intent-specific prompt templates grounded in the Bitext 26K customer support dataset
+- `response_generator.py` — Gemini 2.5 Flash integration with 3-retry backoff, intent-to-prompt routing, and escalation bypass logic
+- `chatbot_tester.py` — Testing suite with per-intent accuracy tracking, response time measurement (ms), and failure reporting
+
+> **Note on demo data:** `response_generator.py` uses hardcoded mock products and orders for standalone demo purposes. In the full integrated system, these connect to the team's SQLite database (`products`, `orders`, `query_logs` tables) built by a teammate.
 
 ---
 
@@ -117,6 +119,7 @@ Each intent has a different tone requirement — enthusiastic for product search
 - Avg Gemini API response time is ~10.5s, well above the <500ms target. Next steps include response caching and prompt length optimization.
 - Test set is 23 queries; expanding to 50+ cases is planned.
 - Static policy responses are not dynamically updated from a database.
+- This module uses mock product/order data for standalone demo. Production version connects to the team's shared SQLite database.
 
 ---
 
@@ -155,9 +158,11 @@ font = "sans serif"
 ```
 streamlit
 google-generativeai
-faiss-cpu
-sentence-transformers
+datasets
+transformers
+huggingface-hub
 pandas
+matplotlib
 ```
 
 ---
