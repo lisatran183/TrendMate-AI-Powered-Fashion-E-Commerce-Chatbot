@@ -139,6 +139,7 @@ export GEMINI_API_KEY="your_key_here"
 # 4. Run the Streamlit UI
 streamlit run ui_demo.py
 ```
+> **Note:** ui_demo.py requires an assets/ folder with logo.png, avatar.jpeg, and avatar1.jpeg to run. These image files are not included in this repo as they belong to the frontend module. The core logic files (intent_classifier.py, prompt_templates.py, response_generator.py, chatbot_tester.py) run independently without the UI.
 
 **Streamlit theme config** — create `.streamlit/config.toml` if missing:
 
