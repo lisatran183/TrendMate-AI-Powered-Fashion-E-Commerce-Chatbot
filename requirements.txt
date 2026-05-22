@@ -1,0 +1,7 @@
+streamlit
+google-generativeai
+datasets
+transformers
+huggingface-hub
+pandas
+matplotlib
