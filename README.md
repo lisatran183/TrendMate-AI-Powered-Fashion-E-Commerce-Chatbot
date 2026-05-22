@@ -127,8 +127,8 @@ Each intent has a different tone requirement — enthusiastic for product search
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/lisatran183/trendmate-fashion-chatbot
-cd trendmate-fashion-chatbot
+git clone https://github.com/lisatran183/TrendMate-AI-Powered-Fashion-E-Commerce-Chatbot
+cd TrendMate-AI-Powered-Fashion-E-Commerce-Chatbot
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -137,7 +137,7 @@ pip install -r requirements.txt
 export GEMINI_API_KEY="your_key_here"
 
 # 4. Run the Streamlit UI
-streamlit run ui_demo.py
+python3 -m streamlit run ui_demo.py
 ```
 **Streamlit theme config** — create `.streamlit/config.toml` if missing:
 
